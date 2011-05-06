@@ -16,8 +16,8 @@ public class TestCatalogo extends Assert {
     }
 
     @Test
-    public void testeQuePassa() {
-
-        assertEquals(2, (1+1));
+    public void testeDeveCriarUmObjetodaClasseCatalogo() {
+        Catalogo tabela = new Catalogo();
+        assertNotNull(null, tabela);
     }
 }
