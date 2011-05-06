@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import org.junit.Before;
 import org.junit.Assert;
 import org.junit.Test;
@@ -16,8 +17,14 @@ public class TestCatalogo extends Assert {
     }
 
     @Test
-    public void testeDeveCriarUmObjetodaClasseCatalogo() {
-        Catalogo tabela = new Catalogo();
+    public void testeDeveCriarUmObjetodaClasseCatalogoComOsAtributosCorretos() {
+        String nome = "Cliente";
+        HashMap<String, String> atributos = new HashMap<String, String>();
+        atributos.put("Nome", "String");
+        atributos.put("Idade", "Integer");
+
+        Catalogo tabela = new Catalogo(nome, atributos);
+        
         assertNotNull(null, tabela);
     }
 }
