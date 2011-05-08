@@ -2,6 +2,7 @@ package util;
 
 import java.io.DataInputStream;
 import java.io.EOFException;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,5 +23,12 @@ public class Arquivos {
         in.close();
 
         return result;
+    }
+
+    public static void deletaArquivo(String nomeArquivo) {
+        File arquivo = new File(nomeArquivo);
+        if (arquivo.exists()) {
+            arquivo.delete();
+        }
     }
 }

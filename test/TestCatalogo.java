@@ -17,6 +17,7 @@ public class TestCatalogo extends Assert {
 
     @Before
     public void setUp() throws Exception {
+        Arquivos.deletaArquivo("tabelas.dat");
     }
 
     @Test
