@@ -20,7 +20,7 @@ public class Catalogo {
     }
 
     public void salvaTabela() throws IOException {
-        DataOutputStream out = new DataOutputStream(new FileOutputStream("tabelas.dat"));
+        DataOutputStream out = new DataOutputStream(new FileOutputStream("tabelas.dat", true));
         try {
             out.writeUTF(this.nome);
             for (String key : atributos.keySet()) {
