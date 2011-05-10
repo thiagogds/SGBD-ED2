@@ -65,6 +65,8 @@ public class TestCatalogo extends Assert {
         HashMap<String, String> atributos_alunos = new HashMap<String, String>();
         atributos_alunos.put("Matricula", "TipoMatricula");
         atributos_alunos.put("CPF", "TipoCPF");
+        atributos_alunos.put("Sobrenome", "TipoSobrenome");
+
 
         Catalogo tabela_alunos = new Catalogo(nome_alunos, atributos_alunos);
         tabela_alunos.salvaTabela();
@@ -80,6 +82,8 @@ public class TestCatalogo extends Assert {
         assertTrue(arrTabela.contains("TipoMatricula"));
         assertTrue(arrTabela.contains("CPF"));
         assertTrue(arrTabela.contains("TipoCPF"));
+        assertTrue(arrTabela.contains("Sobrenome"));
+        assertTrue(arrTabela.contains("TipoSobrenome"));
     }
 
     @Test
