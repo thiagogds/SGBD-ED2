@@ -81,4 +81,52 @@ public class TestCatalogo extends Assert {
         assertTrue(arrTabela.contains("CPF"));
         assertTrue(arrTabela.contains("TipoCPF"));
     }
+
+    @Test
+    public void testLeUmaTabeladoArquivoParaGerarHashMap() throws IOException {
+        String nome_clientes = "Cliente";
+        HashMap<String, String> atributos_cliente = new HashMap<String, String>();
+        atributos_cliente.put("Nome", "String");
+        atributos_cliente.put("Idade", "Integer");
+
+        Catalogo tabelas = new Catalogo(nome_clientes, atributos_cliente);
+        tabelas.salvaTabela();
+
+        HashMap<String, HashMap> tabelas_hash = tabelas.leTabelas();
+
+
+        HashMap<String, HashMap> tabelas_hash_controle = new HashMap<String, HashMap>();
+        tabelas_hash_controle.put("Cliente", atributos_cliente);
+
+        assertEquals(tabelas_hash_controle, tabelas_hash);
+    }
+
+    @Test
+    public void testLeMaisDeUmaTabeladoArquivoParaGerarHashMap() throws IOException {
+        String nome_clientes = "Cliente";
+        HashMap<String, String> atributos_cliente = new HashMap<String, String>();
+        atributos_cliente.put("Nome", "String");
+        atributos_cliente.put("Idade", "Integer");
+
+        Catalogo tabelas = new Catalogo(nome_clientes, atributos_cliente);
+        tabelas.salvaTabela();
+
+        String nome_alunos = "Alunos";
+        HashMap<String, String> atributos_alunos = new HashMap<String, String>();
+        atributos_alunos.put("Matricula", "TipoMatricula");
+        atributos_alunos.put("CPF", "TipoCPF");
+        atributos_alunos.put("Sobrenome", "TipoSobrenome");
+
+        Catalogo tabela_alunos = new Catalogo(nome_alunos, atributos_alunos);
+        tabela_alunos.salvaTabela();
+
+        HashMap<String, HashMap> tabelas_hash = tabelas.leTabelas();
+
+
+        HashMap<String, HashMap> tabelas_hash_controle = new HashMap<String, HashMap>();
+        tabelas_hash_controle.put("Cliente", atributos_cliente);
+        tabelas_hash_controle.put("Alunos", atributos_alunos);
+
+        assertEquals(tabelas_hash_controle, tabelas_hash);
+    }
 }
