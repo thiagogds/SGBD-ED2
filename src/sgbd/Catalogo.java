@@ -62,18 +62,4 @@ public class Catalogo {
             return tabelas;
         }
     }
-//    public void leTabela() {
-//        HashMap<String, HashMap> tabelas = new HashMap<String, HashMap>();
-//        HashMap<String, String> atributos_tabela = new HashMap<String, String>();
-//        while (True) {
-//            nome = in.readUTF()
-//            max = in.readInt()
-//            for (i = 0, i < max, i++ ) {
-//                atributos_tabela.put(in.readtUTF, in.readUTF)
-//            }
-//            tabelas.put("Clientes", atributos_tabela);
-//
-//        }
-//        return;
-//    }
 }
